@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 4vmin;
   pointer-events: none;
 }
 
@@ -26,6 +26,25 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.header {
+  padding: 5px;
+  text-align: center;
+  background: rgb(13, 13, 82);
+  color: white;
+  font-size: 20px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  padding: 10px;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(13, 13, 82);
+  color: white;
+  text-align: center;
 }
 
 @keyframes App-logo-spin {
