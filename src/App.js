@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 import News from './components/News/News.js'
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
   const [news, setNews] = useState([]);
@@ -29,7 +30,8 @@ getNews();
           <div className="header">
             <h1>Header</h1>
             <p>My supercool header</p>
-            <input type="text" placeholder="Search.."/>
+            <SearchBar news={news}  />
+
           </div>
           <News news={news} />
           <footer>
