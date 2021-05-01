@@ -2,13 +2,14 @@ import React from "react";
 import './News.css';
 
 
-export default function News ({ news, isLoading }) {
+export default function News ({ news, isLoading, isError}) {
   return (
-  <div>
-{    isLoading ? (
+<div>
+{  
+    isError ? (<h4>Failed to load results, something went wrong ... </h4>) : (
+    isLoading ? (
     <div className= "content">
-     <p> Loading news ...</p>
-     <i className= "fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+     <h3> Loading news ...</h3><i className= "fa fa-spinner fa-pulse fa-3x fa-fw"></i>
     </div>) : (
    <ol>
     {news.hits.length!==0 ? (news.hits.map((newsPost) => (
@@ -23,7 +24,9 @@ export default function News ({ news, isLoading }) {
         ))) : (<h4> No results match your search, please try again. </h4>)
         }
     </ol>
-    )}
+    )
+    )
+}
   </div>
 );
 }

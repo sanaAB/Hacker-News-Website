@@ -24,9 +24,12 @@ li{
 span{
     color: darkgray;
 }
+
+
+h4{
+    height: 800px;
+}
 .content {
-    flex: 1 0 auto;
-    text-align: center;
-    background-color: white;
+height: 800px;
   }
   

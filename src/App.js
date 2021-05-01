@@ -7,11 +7,15 @@ function App() {
   const [news, setNews] = useState({hits: []});
   const [query, setQuery] = useState("redux");
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
 
 
 
 useEffect(() => {
   const getNews = async () => {
+  setIsError(false);
+
   setIsLoading(true);
   try {
     const response = await fetch(`http://hn.algolia.com/api/v1/search?query=${query} ` );
@@ -23,7 +27,7 @@ useEffect(() => {
     }
     throw new Error("Request Failed!");
   } catch (error) {
-    alert(error);
+    setIsError(true);
   }
 };
 
@@ -44,7 +48,7 @@ const interval=setInterval(()=>{
             <p></p>
             <SearchBar news={news}  query={query} setQuery={setQuery} />
           </div>
-          <News news={news} isLoading={isLoading}/>
+          <News news={news} isLoading={isLoading} isError={isError}/>
           <footer className="footer">
             copyrights@2021
           </footer>
