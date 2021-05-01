@@ -37,15 +37,16 @@
 }
 
 footer {
-  position: fixed;
+  position: static;
   left: 0;
-  padding: 10px;
+  padding: 5px;
   bottom: 0;
   width: 100%;
   background-color: rgb(13, 13, 82);
   color: white;
   text-align: center;
 }
+
 
 @keyframes App-logo-spin {
   from {

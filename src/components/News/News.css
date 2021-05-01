@@ -1,3 +1,4 @@
+
 a{
     text-decoration: none;
     color: black;
@@ -6,6 +7,8 @@ a{
 
 ol{
     margin: 20px;
+    list-style-position: inside;
+    padding: 0px;
 }
 
 li{
@@ -21,3 +24,9 @@ li{
 span{
     color: darkgray;
 }
+.content {
+    flex: 1 0 auto;
+    text-align: center;
+    background-color: white;
+  }
+  

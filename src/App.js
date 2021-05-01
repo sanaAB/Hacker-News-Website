@@ -28,19 +28,27 @@ useEffect(() => {
 };
 
 getNews();
+
+const interval=setInterval(()=>{
+  getNews()
+ },100000)
+   
+   
+ return()=>clearInterval(interval)
 }, [query]);
 
   return (
     <div className="App">
           <div className="header">
-            <h1>Header</h1>
-            <p>My supercool header</p>
+            <h1>Hacker News</h1>
+            <p></p>
             <SearchBar news={news}  query={query} setQuery={setQuery} />
           </div>
           <News news={news} isLoading={isLoading}/>
-          <footer>
-            footer
+          <footer className="footer">
+            copyrights@2021
           </footer>
+
     </div>
   );
 }

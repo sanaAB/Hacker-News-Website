@@ -1,13 +1,12 @@
 import React from "react";
 import './News.css';
-//import { Link } from "react-router-dom";
 
 
 export default function News ({ news, isLoading }) {
   return (
   <div>
 {    isLoading ? (
-    <div>
+    <div className= "content">
      <p> Loading news ...</p>
      <i className= "fa fa-spinner fa-pulse fa-3x fa-fw"></i>
     </div>) : (
@@ -21,7 +20,7 @@ export default function News ({ news, isLoading }) {
           </li>
 
 
-        ))) : (<p> Empty respone </p>)
+        ))) : (<h4> No results match your search, please try again. </h4>)
         }
     </ol>
     )}
