@@ -44,11 +44,11 @@ const interval=setInterval(()=>{
   return (
     <div className="App">
           <div className="header">
-            <h1>Hacker News</h1>
+            <h2>Hacker News</h2>
             <p></p>
             <SearchBar news={news}  query={query} setQuery={setQuery} />
           </div>
-          <News news={news} isLoading={isLoading} isError={isError}/>
+          <News news={news} isLoading={isLoading} isError={isError} setIsError= {setIsError}/>
           <footer className="footer">
             copyrights@2021
           </footer>

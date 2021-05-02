@@ -6,6 +6,7 @@ a{
 }
 
 ol{
+    padding-top: 10px;
     margin: 20px;
     list-style-position: inside;
     padding: 0px;
