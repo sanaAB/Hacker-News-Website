@@ -3,10 +3,11 @@ import './App.css';
 import News from './components/News/News.js'
 import SearchBar from "./components/SearchBar/SearchBar";
 
+
 function App() {
   const [news, setNews] = useState({hits: []});
   const [query, setQuery] = useState("redux");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
 
@@ -18,7 +19,7 @@ useEffect(() => {
 
   setIsLoading(true);
   try {
-    const response = await fetch(`http://hn.algolia.com/api/v1/search?query=${query} ` );
+    const response = await fetch(`https://hn.algolia.com/api/v1/search?query=${query} ` );
     if (response.ok) {
       const jsonResponse = await response.json();
       setNews(jsonResponse);
@@ -36,15 +37,17 @@ getNews();
 const interval=setInterval(()=>{
   getNews()
  },100000)
-   
-   
  return()=>clearInterval(interval)
 }, [query]);
+
+
+
+
 
   return (
     <div className="App">
           <div className="header">
-            <h2>Hacker News</h2>
+            <h2>  Hacker News </h2>
             <p></p>
             <SearchBar news={news}  query={query} setQuery={setQuery} />
           </div>

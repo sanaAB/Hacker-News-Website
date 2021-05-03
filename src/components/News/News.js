@@ -12,6 +12,7 @@ export default function News ({ news, isLoading, isError, setIsError}) {
 {  
     isError ? (
         <Alert variant="danger"  onClose={() => setIsError(false)} dismissible>
+          <div></div>
           <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
           <h4>
           Failed to load results.
@@ -32,7 +33,7 @@ export default function News ({ news, isLoading, isError, setIsError}) {
               <a href= {newsPost.url} target= "blank"> 
               {newsPost.title}
               </a>
-              <div> <span>{newsPost.points} points</span> | <span>{newsPost.author} | </span></div>
+              <div> <span>{newsPost.points} points |</span>  <span> author: {newsPost.author} |  </span> <span> comments: {newsPost.num_comments}   </span> </div>  
           </li>
 
 
